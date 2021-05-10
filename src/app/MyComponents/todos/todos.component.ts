@@ -39,4 +39,11 @@ export class TodosComponent implements OnInit {
     this.todos.push(todos);
     localStorage.setItem('todos' , JSON.stringify(this.todos));
   }
+
+  // tslint:disable-next-line: typedef
+  toggleToDo(todos: ToDo) {
+    const index = this.todos.indexOf(todos);
+    this.todos[index].active = !this.todos[index].active;
+    localStorage.setItem('todos' , JSON.stringify(this.todos));
+  }
 }
